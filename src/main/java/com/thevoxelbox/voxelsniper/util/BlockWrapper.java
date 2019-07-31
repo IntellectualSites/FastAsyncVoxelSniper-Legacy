@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper.util;
+package com.thevoxelbox.voxelsniper.util;
 
 import com.boydti.fawe.bukkit.wrapper.AsyncBlock;
 import org.bukkit.Material;

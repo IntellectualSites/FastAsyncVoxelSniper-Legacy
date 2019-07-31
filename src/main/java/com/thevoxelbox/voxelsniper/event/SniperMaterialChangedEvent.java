@@ -23,7 +23,7 @@
  THE SOFTWARE.
  */
 
-package main.java.com.thevoxelbox.voxelsniper.event;
+package com.thevoxelbox.voxelsniper.event;
 
 import com.boydti.fawe.Fawe;
 import com.thevoxelbox.voxelsniper.Sniper;

@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper;
+package com.thevoxelbox.voxelsniper;
 
 import org.bukkit.Art;
 import org.bukkit.ChatColor;

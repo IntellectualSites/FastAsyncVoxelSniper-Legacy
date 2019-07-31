@@ -23,7 +23,7 @@
  THE SOFTWARE.
  */
 
-package main.java.com.thevoxelbox.voxelsniper;
+package com.thevoxelbox.voxelsniper;
 
 import com.boydti.fawe.Fawe;
 import com.boydti.fawe.bukkit.wrapper.AsyncBlock;

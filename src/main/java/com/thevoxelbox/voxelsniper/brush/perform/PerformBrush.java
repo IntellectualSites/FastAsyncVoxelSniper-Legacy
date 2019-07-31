@@ -22,7 +22,7 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
  */
-package main.java.com.thevoxelbox.voxelsniper.brush.perform;
+package com.thevoxelbox.voxelsniper.brush.perform;
 
 import com.sk89q.worldedit.function.pattern.Pattern;
 import com.thevoxelbox.voxelsniper.Message;

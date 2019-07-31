@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper;
+package com.thevoxelbox.voxelsniper;
 
 public enum SnipeAction {
     ARROW, GUNPOWDER

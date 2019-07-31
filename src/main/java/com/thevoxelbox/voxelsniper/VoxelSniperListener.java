@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper;
+package com.thevoxelbox.voxelsniper;
 
 import com.boydti.fawe.config.BBC;
 import com.boydti.fawe.object.FawePlayer;

@@ -26,9 +26,11 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '5.1.0'
 }
 
+group = 'com.thevoxelbox.voxelsniper'
+
 def rootVersion = "1.14"
 def revision = ""
-def  buildNumber = ""
+def buildNumber = ""
 def date = ""
 ext {
     git = Grgit.open(dir: new File(rootDir.toString()+'/.git'))
@@ -77,6 +79,7 @@ dependencies {
     compile 'org.spigotmc:spigot:1.13.2-R0.1-SNAPSHOT'
     compile 'BuildTools:lastSuccessfulBuild:spigot-1.14.4@jar'
     implementation('com.thevoxelbox.voxelsniper:voxelsniper:5.171.0'){transitive = false}
+    compileOnly 'org.jetbrains:annotations:17.0.0'
 }
 
 sourceCompatibility = 1.8

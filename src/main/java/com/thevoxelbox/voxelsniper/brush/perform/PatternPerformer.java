@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper.brush.perform;
+package com.thevoxelbox.voxelsniper.brush.perform;
 
 import com.boydti.fawe.bukkit.wrapper.AsyncBlock;
 import com.boydti.fawe.object.pattern.PatternTraverser;

@@ -22,7 +22,7 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  */
-package main.java.com.thevoxelbox.voxelsniper;
+package com.thevoxelbox.voxelsniper;
 
 import org.bukkit.World;
 import org.bukkit.block.Block;

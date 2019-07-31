@@ -1,6 +1,5 @@
-package main.java.com.thevoxelbox.voxelsniper.command;
+package com.thevoxelbox.voxelsniper.command;
 
-import com.boydti.fawe.config.BBC;
 import com.thevoxelbox.voxelsniper.Sniper;
 import com.thevoxelbox.voxelsniper.VoxelSniper;
 import com.thevoxelbox.voxelsniper.api.command.VoxelCommand;

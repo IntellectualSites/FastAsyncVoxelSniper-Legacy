@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper.command;
+package com.thevoxelbox.voxelsniper.command;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;

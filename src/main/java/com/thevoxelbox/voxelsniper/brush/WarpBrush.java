@@ -22,7 +22,7 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
  */
-package main.java.com.thevoxelbox.voxelsniper.brush;
+package com.thevoxelbox.voxelsniper.brush;
 
 import com.boydti.fawe.object.RunnableVal;
 import com.boydti.fawe.util.TaskManager;

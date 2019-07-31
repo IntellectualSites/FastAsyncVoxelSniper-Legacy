@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper.api.command;
+package com.thevoxelbox.voxelsniper.api.command;
 
 import com.thevoxelbox.voxelsniper.VoxelSniper;
 import org.bukkit.entity.Player;

@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper.brush;
+package com.thevoxelbox.voxelsniper.brush;
 
 import com.sk89q.worldedit.world.block.BlockTypes;
 import com.thevoxelbox.voxelsniper.Message;

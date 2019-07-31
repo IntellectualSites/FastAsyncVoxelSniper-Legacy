@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper.util;
+package com.thevoxelbox.voxelsniper.util;
 
 import com.thevoxelbox.voxelsniper.Undo;
 import org.bukkit.BlockChangeDelegate;

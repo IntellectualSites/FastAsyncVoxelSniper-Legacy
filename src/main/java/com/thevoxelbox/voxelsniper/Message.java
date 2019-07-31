@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper;
+package com.thevoxelbox.voxelsniper;
 
 import com.sk89q.worldedit.world.block.BlockTypes;
 import org.bukkit.ChatColor;

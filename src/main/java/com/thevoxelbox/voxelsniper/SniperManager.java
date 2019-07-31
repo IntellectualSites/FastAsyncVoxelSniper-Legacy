@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper;
+package com.thevoxelbox.voxelsniper;
 
 import com.google.common.collect.Maps;
 import org.bukkit.entity.Player;
