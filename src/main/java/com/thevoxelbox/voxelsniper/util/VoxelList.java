@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper.util;
+package com.thevoxelbox.voxelsniper.util;
 
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldedit.extent.NullExtent;

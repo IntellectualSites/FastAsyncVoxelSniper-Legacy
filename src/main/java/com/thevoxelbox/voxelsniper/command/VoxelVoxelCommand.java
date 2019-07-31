@@ -23,7 +23,7 @@
  THE SOFTWARE.
  */
 
-package main.java.com.thevoxelbox.voxelsniper.command;
+package com.thevoxelbox.voxelsniper.command;
 
 import com.boydti.fawe.bukkit.favs.PatternUtil;
 import com.sk89q.worldedit.WorldEdit;

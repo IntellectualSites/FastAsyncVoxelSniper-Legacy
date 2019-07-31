@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper.brush;
+package com.thevoxelbox.voxelsniper.brush;
 
 import com.thevoxelbox.voxelsniper.Message;
 import com.thevoxelbox.voxelsniper.SnipeData;

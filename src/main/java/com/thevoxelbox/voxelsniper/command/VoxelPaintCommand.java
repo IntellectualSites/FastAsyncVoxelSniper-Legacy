@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper.command;
+package com.thevoxelbox.voxelsniper.command;
 
 import com.thevoxelbox.voxelsniper.PaintingWrapper;
 import com.thevoxelbox.voxelsniper.VoxelSniper;

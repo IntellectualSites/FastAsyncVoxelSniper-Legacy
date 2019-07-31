@@ -14,42 +14,19 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:5.0.0'
         classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.8.1'
     }
 }
 
 plugins {
-    id "org.ajoberstar.grgit" version "3.1.1"
-    id "java"
-    id "eclipse"
-    id "maven"
-    id "com.github.johnrengelman.shadow" version "5.1.0"
+    id 'java'
+    id 'maven'
+    id 'org.ajoberstar.grgit' version '3.1.1'
+    id 'com.github.johnrengelman.shadow' version '5.1.0'
 }
 
-repositories {
-    mavenCentral()
-    maven { url 'https://ci.athion.net/job/FastAsyncWorldEdit-Breaking/ws/mvn' }
-    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
-    maven { url "http://repo.maven.apache.org/maven2" }
-    // Fawe
-    maven { url "https://mvnrepository.com/artifact/" }
-    maven { url "http://repo.dmulloy2.net/content/groups/public/" }
-    maven { url "https://repo.destroystokyo.com/repository/maven-public//" }
-    mavenLocal()
-    maven { url "http://empcraft.com/maven2" }
-    maven { url "https://hub.spigotmc.org/nexus/content/groups/public/" }
-    maven { url "http://ci.frostcast.net/plugin/repository/everything" }
-    maven { url "http://maven.sk89q.com/artifactory/repo" }
-    maven { url "http://dl.bintray.com/tastybento/maven-repo" }
-    maven { url "http://ci.emc.gs/nexus/content/groups/aikar/" }
-    ivy {
-        url 'https://ci.athion.net/job'
-        layout 'pattern', {
-            artifact '/[organisation]/[module]/artifact/[revision].[ext]'
-        }
-    }
-}
+group = 'com.thevoxelbox.voxelsniper'
 
 def rootVersion = "1.14"
 def revision = ""
@@ -71,12 +48,43 @@ ext {
     }
 }
 
-version = String.format("%s.%s", rootVersion, buildNumber)
+version = String.format("%s-%s", rootVersion, buildNumber)
+
+repositories {
+    mavenCentral()
+    maven { url 'https://ci.athion.net/job/FastAsyncWorldEdit-1.14/ws/mvn' }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    maven { url "http://repo.maven.apache.org/maven2" }
+    // Fawe
+    maven { url "https://mvnrepository.com/artifact/" }
+    maven { url "https://repo.destroystokyo.com/repository/maven-public//" }
+    mavenLocal()
+    maven { url "http://empcraft.com/maven2" }
+    maven { url "https://hub.spigotmc.org/nexus/content/groups/public/" }
+    maven { url "http://maven.sk89q.com/artifactory/repo" }
+    maven { url "http://ci.emc.gs/nexus/content/groups/aikar/" }
+    ivy {
+        url 'https://ci.athion.net/job'
+        layout 'pattern', {
+            artifact '/[organisation]/[module]/artifact/[revision].[ext]'
+        }
+    }
+}
 
 dependencies {
     compile 'com.boydti:fawe-api:latest'
+    compile 'com.boydti:fawe-bukkit:latest'
     compile 'com.martiansoftware:jsap:2.1'
+    compile 'com.destroystokyo.paper:paper-api:1.14.4-R0.1-SNAPSHOT'
+    implementation('io.papermc:paperlib:1.0.2'){transitive = false}
+    compile 'org.spigotmc:spigot:1.13.2-R0.1-SNAPSHOT'
+    compile 'BuildTools:lastSuccessfulBuild:spigot-1.14.4@jar'
+    implementation('com.thevoxelbox.voxelsniper:voxelsniper:5.171.0'){transitive = false}
+    compileOnly 'org.jetbrains:annotations:17.0.0'
 }
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 processResources {
     from('src/main/resources') {
@@ -101,3 +109,22 @@ shadowJar {
 }
 
 build.dependsOn(shadowJar)
+
+task aggregatedJavadocs(type: Javadoc, description: 'Generate javadocs from all child projects as if it was a single project', group: 'Documentation') {
+    destinationDir = file("./docs/javadoc")
+    title = "$project.name $version API"
+    options.author true
+    options.links 'http://docs.spring.io/spring/docs/4.3.x/javadoc-api/', 'http://docs.oracle.com/javase/8/docs/api/', 'http://docs.spring.io/spring-ws/docs/2.3.0.RELEASE/api/', 'http://docs.spring.io/spring-security/site/docs/4.0.4.RELEASE/apidocs/'
+    options.addStringOption('Xdoclint:none', '-quiet')
+
+    delete "./docs"
+
+    subprojects.each { proj ->
+        proj.tasks.withType(Javadoc).each { javadocTask ->
+            source += javadocTask.source
+            classpath += javadocTask.classpath
+            excludes += javadocTask.excludes
+            includes += javadocTask.includes
+        }
+    }
+}

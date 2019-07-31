@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper.command;
+package com.thevoxelbox.voxelsniper.command;
 
 import com.boydti.fawe.bukkit.wrapper.AsyncBlock;
 import com.sk89q.worldedit.world.block.BlockType;

@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper.jsap;
+package com.thevoxelbox.voxelsniper.jsap;
 
 import com.martiansoftware.jsap.JSAP;
 import com.martiansoftware.jsap.JSAPException;

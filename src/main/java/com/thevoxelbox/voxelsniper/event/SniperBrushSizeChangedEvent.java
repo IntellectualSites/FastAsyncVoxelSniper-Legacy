@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper.event;
+package com.thevoxelbox.voxelsniper.event;
 
 import com.thevoxelbox.voxelsniper.Sniper;
 import org.bukkit.event.Event;

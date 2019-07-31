@@ -1,4 +1,4 @@
-package main.java.com.boydti.fawe.bukkit.favs;
+package com.boydti.fawe.bukkit.favs;
 
 import com.boydti.fawe.object.FawePlayer;
 import com.sk89q.worldedit.WorldEdit;

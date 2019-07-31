@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper;
+package com.thevoxelbox.voxelsniper;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.HashMultimap;

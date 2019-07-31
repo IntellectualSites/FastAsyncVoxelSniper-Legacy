@@ -1,4 +1,4 @@
-package main.java.com.thevoxelbox.voxelsniper.brush;
+package com.thevoxelbox.voxelsniper.brush;
 
 import com.sk89q.worldedit.extension.input.InputParseException;
 import com.sk89q.worldedit.world.block.BlockTypes;
