@@ -48,7 +48,7 @@ ext {
     }
 }
 
-version = String.format("%s-%s", rootVersion, buildNumber)
+version = String.format("%s%s", rootVersion, buildNumber)
 
 repositories {
     mavenCentral()
@@ -105,7 +105,7 @@ shadowJar {
         include(dependency('com.martiansoftware:jsap:2.1'))
     }
     archiveName = "FastAsyncVoxelSniper-${project.name}-${project.version}.jar"
-    destinationDir = file '../target'
+    jar.destinationDir = file('./target')
 }
 
 build.dependsOn(shadowJar)
