@@ -48,7 +48,7 @@ ext {
     }
 }
 
-version = String.format("%s%s", rootVersion, buildNumber)
+version = String.format("%s-%s", rootVersion, buildNumber)
 
 repositories {
     mavenCentral()
@@ -86,6 +86,10 @@ dependencies {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+clean.doFirst {
+    delete "../target"
+}
+
 processResources {
     from('src/main/resources') {
         include 'plugin.yml'
@@ -94,10 +98,6 @@ processResources {
                 version: project.version
         )
     }
-}
-
-clean.doFirst {
-    delete "../target"
 }
 
 shadowJar {
