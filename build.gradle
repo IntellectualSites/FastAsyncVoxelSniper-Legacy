@@ -1,0 +1,103 @@
+import org.ajoberstar.grgit.Grgit
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url = "https://oss.sonatype.org/content/repositories/snapshots/" }
+        jcenter()
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            force 'commons-io:commons-io:2.4'
+        }
+    }
+
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
+        classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.8.1'
+    }
+}
+
+plugins {
+    id "org.ajoberstar.grgit" version "3.1.1"
+    id "java"
+    id "eclipse"
+    id "maven"
+    id "com.github.johnrengelman.shadow" version "5.1.0"
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://ci.athion.net/job/FastAsyncWorldEdit-Breaking/ws/mvn' }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    maven { url "http://repo.maven.apache.org/maven2" }
+    // Fawe
+    maven { url "https://mvnrepository.com/artifact/" }
+    maven { url "http://repo.dmulloy2.net/content/groups/public/" }
+    maven { url "https://repo.destroystokyo.com/repository/maven-public//" }
+    mavenLocal()
+    maven { url "http://empcraft.com/maven2" }
+    maven { url "https://hub.spigotmc.org/nexus/content/groups/public/" }
+    maven { url "http://ci.frostcast.net/plugin/repository/everything" }
+    maven { url "http://maven.sk89q.com/artifactory/repo" }
+    maven { url "http://dl.bintray.com/tastybento/maven-repo" }
+    maven { url "http://ci.emc.gs/nexus/content/groups/aikar/" }
+    ivy {
+        url 'https://ci.athion.net/job'
+        layout 'pattern', {
+            artifact '/[organisation]/[module]/artifact/[revision].[ext]'
+        }
+    }
+}
+
+def rootVersion = "1.14"
+def revision = ""
+def buildNumber = ""
+def date = ""
+ext {
+    git = Grgit.open(dir: new File(rootDir.toString()+'/.git'))
+    date = git.head().getDate().format("yy.MM.dd")
+    revision = "-${git.head().abbreviatedId}"
+    parents = git.head().parentIds;
+    if (project.hasProperty('buildnumber')) {
+        buildNumber = "$buildnumber"
+    } else {
+        index = -2109;  // Offset to match CI
+        for (; parents != null && !parents.isEmpty(); index++) {
+            parents = git.getResolve().toCommit(parents.get(0)).getParentIds()
+        }
+        buildNumber = "${index}"
+    }
+}
+
+version = String.format("%s.%s", rootVersion, buildNumber)
+
+dependencies {
+    compile 'com.boydti:fawe-api:latest'
+    compile 'com.martiansoftware:jsap:2.1'
+}
+
+processResources {
+    from('src/main/resources') {
+        include 'plugin.yml'
+        expand(
+                name: project.name,
+                version: project.version
+        )
+    }
+}
+
+clean.doFirst {
+    delete "../target"
+}
+
+shadowJar {
+    dependencies {
+        include(dependency('com.martiansoftware:jsap:2.1'))
+    }
+    archiveName = "FastAsyncVoxelSniper-${project.name}-${project.version}.jar"
+    destinationDir = file '../target'
+}
+
+build.dependsOn(shadowJar)

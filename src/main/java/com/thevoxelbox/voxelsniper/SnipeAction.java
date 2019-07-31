@@ -1,0 +1,5 @@
+package main.java.com.thevoxelbox.voxelsniper;
+
+public enum SnipeAction {
+    ARROW, GUNPOWDER
+}

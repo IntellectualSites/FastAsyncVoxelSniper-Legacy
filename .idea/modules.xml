@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FastAsyncVoxelSniper.iml" filepath="$PROJECT_DIR$/FastAsyncVoxelSniper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/favs.iml" filepath="$PROJECT_DIR$/.idea/modules/favs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/favs.main.iml" filepath="$PROJECT_DIR$/.idea/modules/favs.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/favs.test.iml" filepath="$PROJECT_DIR$/.idea/modules/favs.test.iml" />
     </modules>
   </component>
 </project>
