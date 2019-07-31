@@ -73,6 +73,7 @@ repositories {
 
 dependencies {
     compile 'com.boydti:fawe-api:latest'
+    compile 'com.boydti:fawe-bukkit:latest'
     compile 'com.martiansoftware:jsap:2.1'
     compile 'com.destroystokyo.paper:paper-api:1.14.4-R0.1-SNAPSHOT'
     implementation('io.papermc:paperlib:1.0.2'){transitive = false}
