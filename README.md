@@ -10,8 +10,8 @@ You need FAWE in order to use it.
 
 ## Downloads
 * [Download FAWE](https://empcraft.com/fawe/download/?bukkit113)
-* [Jenkins](https://ci.athion.net/job/FastAsyncVoxelSniper/)
-* [JavaDoc](https://ci.athion.net/job/FastAsyncVoxelSniper/javadoc/)
+* [Download FAVS] Not ready yet, download the builds from Jenkins
+* [Jenkins](https://ci.athion.net/job/FastAsyncVoxelSniper-1.13+/)
 
 ## Building
 FAVS uses gradle to build  
