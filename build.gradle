@@ -87,7 +87,9 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 clean.doFirst {
-    delete "../target"
+    delete "./target"
+    delete "./build"
+    delete "./mvn"
 }
 
 processResources {
@@ -109,6 +111,37 @@ shadowJar {
 }
 
 build.dependsOn(shadowJar)
+
+jar.setArchiveName("favs-api-${project.version}.jar")
+jar.destinationDir = file './mvn/com/thevoxelbox/favs-api/' + project.version
+task createPom doLast {
+        pom {
+            project {
+                groupId 'com.thevoxelbox'
+                artifactId 'favs-api'
+                version project.version
+            }
+        }.writeTo("./mvn/com/thevoxelbox/favs-api/${project.version}/favs-api-${project.version}.pom")
+        pom {
+            project {
+                groupId 'com.thevoxelbox'
+                artifactId 'favs-api'
+                version 'latest'
+            }
+        }.writeTo("./mvn/com/thevoxelbox/favs-api/latest/favs-api-latest.pom")
+}
+
+task copyFiles doLast {
+        copy {
+            from "./mvn/com/thevoxelbox/favs-api/${project.version}/"
+            into './mvn/com/thevoxelbox/favs-api/latest/'
+            include('*.jar')
+            rename("favs-api-${project.version}.jar", 'favs-api-latest.jar')
+        }
+}
+
+build.finalizedBy(copyFiles)
+copyFiles.dependsOn(createPom)
 
 task aggregatedJavadocs(type: Javadoc, description: 'Generate javadocs from all child projects as if it was a single project', group: 'Documentation') {
     destinationDir = file("./docs/javadoc")
