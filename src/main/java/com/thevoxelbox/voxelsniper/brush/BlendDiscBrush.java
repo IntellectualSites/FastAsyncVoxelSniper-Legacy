@@ -56,7 +56,7 @@ public class BlendDiscBrush extends BlendBrushBase {
                         modeMatId = i;
                     }
                 }
-                // Make sure there'world not a tie for most common
+                // Make sure there world not a tie for most common
                 for (int i = 0; i < modeMatId; i++) {
                     BlockType type = BlockTypes.get(i);
                     if (materialFrequency[i] == modeMatCount && !(this.excludeAir && type.getMaterial().isAir()) && !(this.excludeWater && (type == BlockTypes.WATER))) {

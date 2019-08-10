@@ -40,7 +40,7 @@ public class GenerateTreeBrush extends Brush {
     private int blockPositionY;
     private int blockPositionZ;
 
-public GenerateTreeBrush() {
+    public GenerateTreeBrush() {
         this.setName("Generate Tree");
     }
 

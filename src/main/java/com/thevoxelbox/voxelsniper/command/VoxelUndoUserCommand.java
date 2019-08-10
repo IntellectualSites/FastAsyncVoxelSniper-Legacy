@@ -19,7 +19,7 @@ public class VoxelUndoUserCommand extends VoxelCommand {
             plugin.getSniperManager().getSniperForPlayer(Bukkit.getPlayer(args[0])).undo();
             return true;
         } catch (final Exception exception) {
-            player.sendMessage(ChatColor.GREEN + "Player not found.");
+            player.sendMessage(ChatColor.RED + "Player not found.");
             return true;
         }
     }

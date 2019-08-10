@@ -11,10 +11,10 @@ import com.thevoxelbox.voxelsniper.Message;
 import com.thevoxelbox.voxelsniper.SnipeData;
 
 public class PatternPerformer extends vPerformer {
+    private final MutableBlockVector3 mutable = new MutableBlockVector3();
     private String info;
     private Pattern pattern;
     private Extent extent;
-    private final MutableBlockVector3 mutable = new MutableBlockVector3();
 
     @Override
     public void info(Message vm) {

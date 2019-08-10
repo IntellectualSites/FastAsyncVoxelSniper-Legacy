@@ -43,7 +43,7 @@ public class VoxelBrushCommand extends VoxelCommand {
                 Bukkit.getPluginManager().callEvent(event);
                 snipeData.getVoxelMessage().size();
                 return true;
-            } catch (NumberFormatException ingored) {
+            } catch (NumberFormatException ignored) {
             }
 
             Class<? extends IBrush> brush = plugin.getBrushManager().getBrushForHandle(args[0]);

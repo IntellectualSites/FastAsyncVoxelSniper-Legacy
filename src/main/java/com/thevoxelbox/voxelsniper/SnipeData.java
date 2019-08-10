@@ -90,6 +90,7 @@ public class SnipeData {
 
     /**
      * Get the extent currently being used to set blocks
+     *
      * @return
      */
     public Extent getExtent() {
@@ -98,6 +99,7 @@ public class SnipeData {
 
     /**
      * Set the extent currently being used to set blocks
+     *
      * @param extent
      */
     public void setExtent(Extent extent) {

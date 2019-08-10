@@ -65,7 +65,7 @@ public class StencilListBrush extends Brush {
         final File file = new File("plugins/VoxelSniper/stencils/" + stencilName + ".vstencil");
 
         if (file.exists()) {
-            try (final DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(file)))){
+            try (final DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(file)))) {
                 this.x = in.readShort();
                 this.z = in.readShort();
                 this.y = in.readShort();

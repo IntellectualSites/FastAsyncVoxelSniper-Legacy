@@ -62,7 +62,7 @@ public class DiscBrush extends PerformBrush {
 
             if (parameter.equalsIgnoreCase("info")) {
                 v.sendMessage(ChatColor.GOLD + "Disc Brush Parameters:");
-                v.sendMessage(ChatColor.AQUA + "/b d true|false" + " -- toggles useing the true circle algorithm instead of the skinnier version with classic sniper nubs. (false is default)");
+                v.sendMessage(ChatColor.AQUA + "/b d true|false" + " -- toggles using the true circle algorithm instead of the skinnier version with classic sniper nubs. (false is default)");
                 return;
             } else if (parameter.startsWith("true")) {
                 this.trueCircle = 0.5;

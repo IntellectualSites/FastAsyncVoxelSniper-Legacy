@@ -26,7 +26,7 @@ public class VoxelBrushToolCommand extends VoxelCommand {
                 } else if (args[1].equalsIgnoreCase("powder")) {
                     action = SnipeAction.GUNPOWDER;
                 } else {
-                    player.sendMessage("/btool assign <arrow|powder> <toolid>");
+                    player.sendMessage("/btool assign <arrow|powder> <tool id>");
                     return true;
                 }
 
@@ -54,8 +54,8 @@ public class VoxelBrushToolCommand extends VoxelCommand {
                 }
             }
         }
-        player.sendMessage("/btool assign <arrow|powder> <toolid>");
-        player.sendMessage("/btool remove [toolid]");
+        player.sendMessage("/btool assign <arrow|powder> <tool id>");
+        player.sendMessage("/btool remove [tool id]");
         return true;
     }
 }

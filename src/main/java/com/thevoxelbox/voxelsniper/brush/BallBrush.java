@@ -16,7 +16,7 @@ public class BallBrush extends PerformBrush {
     public static final int TRUE_CIRCLE_OFF_VALUE = 0;
     private double trueCircle = 0;
 
-public BallBrush() {
+    public BallBrush() {
         this.setName("Ball");
     }
 

@@ -46,16 +46,20 @@ public class VoxelVoxelCommand extends VoxelCommand {
         this.setPermission("voxelsniper.sniper");
     }
 
+    public static Class<?> inject() {
+        return VoxelVoxelCommand.class;
+    }
+
     public boolean onCommand(Player player, String[] args) {
         Sniper sniper = this.plugin.getSniperManager().getSniperForPlayer(player);
         SnipeData snipeData = sniper.getSnipeData(sniper.getCurrentToolId());
-        if(args.length == 0) {
+        if (args.length == 0) {
             Block block = (new RangeBlockHelper(player, sniper.getWorld())).getTargetBlock();
             Material blockType = block.getType();
 
             BlockType weType = BukkitAdapter.adapt(blockType);
-            if(!player.hasPermission("voxelsniper.ignorelimitations") && WorldEdit.getInstance().getConfiguration().checkDisallowedBlocks(weType.getDefaultState())) {
-                player.sendMessage("You are not allowed to use " + blockType.name() + ". (WorldEdit config.yml)");
+            if (!player.hasPermission("voxelsniper.ignorelimitations") && WorldEdit.getInstance().getConfiguration().checkDisallowedBlocks(weType.getDefaultState())) {
+                player.sendMessage("You are not allowed to use " + blockType.name() + ". (check WorldEdit config-legacy.yml)");
                 return true;
             }
 
@@ -66,8 +70,8 @@ public class VoxelVoxelCommand extends VoxelCommand {
             return true;
         } else {
             BlockType weType = BlockTypes.parse(args[0]);
-            if(weType != null) {
-                if(!player.hasPermission("voxelsniper.ignorelimitations") && WorldEdit.getInstance().getConfiguration().checkDisallowedBlocks(weType.getDefaultState())) {
+            if (weType != null) {
+                if (!player.hasPermission("voxelsniper.ignorelimitations") && WorldEdit.getInstance().getConfiguration().checkDisallowedBlocks(weType.getDefaultState())) {
                     player.sendMessage("You are not allowed to use " + weType + ".");
                     return true;
                 } else {
@@ -81,9 +85,5 @@ public class VoxelVoxelCommand extends VoxelCommand {
                 return true;
             }
         }
-    }
-
-    public static Class<?> inject() {
-        return VoxelVoxelCommand.class;
     }
 }

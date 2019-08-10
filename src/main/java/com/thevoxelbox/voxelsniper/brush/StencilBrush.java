@@ -42,7 +42,7 @@ public class StencilBrush extends Brush {
     private int[] pastePoint = new int[3];
     private byte point = 1;
 
-public StencilBrush() {
+    public StencilBrush() {
         this.setName("Stencil");
     }
 

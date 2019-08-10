@@ -40,7 +40,7 @@ public class ShellBallBrush extends Brush {
         for (int x = 0; x <= brushSizeDoubled; x++) {
             for (int y = 0; y <= brushSizeDoubled; y++) {
                 System.arraycopy(oldMaterials[x + 1][y + 1], 1, newMaterials[x][y], 0,
-                                 brushSizeDoubled + 1);
+                        brushSizeDoubled + 1);
             }
         }
 

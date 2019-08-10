@@ -30,7 +30,6 @@ import com.thevoxelbox.voxelsniper.Sniper;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-import org.bukkit.material.MaterialData;
 
 public class SniperMaterialChangedEvent extends Event {
     private static final HandlerList handlers = new HandlerList();

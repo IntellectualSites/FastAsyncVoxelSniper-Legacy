@@ -10,7 +10,7 @@ import org.bukkit.ChatColor;
  * @author Voxel
  */
 public class CloneStampBrush extends StampBrush {
-public CloneStampBrush() {
+    public CloneStampBrush() {
         this.setName("Clone");
     }
 
@@ -71,7 +71,7 @@ public CloneStampBrush() {
                 }
             }
         }
-        v.sendMessage(ChatColor.GREEN + String.valueOf(this.clone.size()) + ChatColor.AQUA + " blocks copied sucessfully.");
+        v.sendMessage(ChatColor.GREEN + String.valueOf(this.clone.size()) + ChatColor.AQUA + " blocks copied successfully.");
     }
 
     @Override

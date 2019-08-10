@@ -174,7 +174,7 @@ public class ErodeBrush extends Brush {
         vm.brushName(this.getName());
         vm.size();
         vm.custom(ChatColor.AQUA + "Erosion minimum exposed faces set to " + this.currentPreset.getErosionFaces());
-        vm.custom(ChatColor.BLUE + "Fill minumum touching faces set to " + this.currentPreset.getFillFaces());
+        vm.custom(ChatColor.BLUE + "Fill minimum touching faces set to " + this.currentPreset.getFillFaces());
         vm.custom(ChatColor.DARK_BLUE + "Erosion recursion amount set to " + this.currentPreset.getErosionRecursion());
         vm.custom(ChatColor.DARK_GREEN + "Fill recursion amount set to " + this.currentPreset.getFillRecursion());
     }

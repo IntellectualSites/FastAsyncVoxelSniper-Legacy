@@ -100,7 +100,7 @@ public class SplatterBallBrush extends PerformBrush {
                 for (int y = 2 * v.getBrushSize(); y >= 0; y--) {
                     if (2 * v.getBrushSize() + 1 >= 0) {
                         System.arraycopy(tempSplat[x][y], 0, splat[x][y], 0,
-                                         2 * v.getBrushSize() + 1);
+                                2 * v.getBrushSize() + 1);
                     }
                 }
             }

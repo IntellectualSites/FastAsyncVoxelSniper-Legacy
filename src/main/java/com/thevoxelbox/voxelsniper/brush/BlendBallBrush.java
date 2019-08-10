@@ -22,7 +22,7 @@ public class BlendBallBrush extends BlendBrushBase {
         // Array that holds the blended materials
         final int[][][] newMaterials = new int[brushSizeDoubled + 1][brushSizeDoubled + 1][brushSizeDoubled + 1];
 
-        // Log current materials into oldmats
+        // Log current materials into old materials
         for (int x = 0; x <= 2 * (brushSize + 1); x++) {
             for (int y = 0; y <= 2 * (brushSize + 1); y++) {
                 for (int z = 0; z <= 2 * (brushSize + 1); z++) {
@@ -31,11 +31,11 @@ public class BlendBallBrush extends BlendBrushBase {
             }
         }
 
-        // Log current materials into newmats
+        // Log current materials into new materials
         for (int x = 0; x <= brushSizeDoubled; x++) {
             for (int y = 0; y <= brushSizeDoubled; y++) {
                 System.arraycopy(oldMaterials[x + 1][y + 1], 1, newMaterials[x][y], 0,
-                                 brushSizeDoubled + 1);
+                        brushSizeDoubled + 1);
             }
         }
 
