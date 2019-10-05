@@ -60,7 +60,7 @@ repositories {
     maven { url "https://repo.destroystokyo.com/repository/maven-public//" }
     mavenLocal()
     maven { url "http://empcraft.com/maven2" }
-    maven { url "https://hub.spigotmc.org/nexus/content/groups/public/" }
+    maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
     maven { url "http://maven.sk89q.com/artifactory/repo" }
     maven { url "http://ci.emc.gs/nexus/content/groups/aikar/" }
     ivy {
@@ -77,7 +77,7 @@ dependencies {
     compile 'com.martiansoftware:jsap:2.1'
     compile 'com.destroystokyo.paper:paper-api:1.14.4-R0.1-SNAPSHOT'
     implementation('io.papermc:paperlib:1.0.2'){transitive = false}
-    compile 'org.spigotmc:spigot:1.13.2-R0.1-SNAPSHOT'
+    compile 'org.spigotmc:spigot-api:1.13.2-R0.1-SNAPSHOT'
     compile 'BuildTools:lastSuccessfulBuild:spigot-1.14.4@jar'
     implementation('com.thevoxelbox.voxelsniper:voxelsniper:5.171.0'){transitive = false}
     compileOnly 'org.jetbrains:annotations:17.0.0'
