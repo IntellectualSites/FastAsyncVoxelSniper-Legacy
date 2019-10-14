@@ -1,4 +1,4 @@
 # Max brush size for FAVS brushes
-litesniper-max-brush-size: 30
+max-brush-size: 30
 # Enable or disable the brush information on login
 message-on-login-enabled: true

@@ -6,9 +6,9 @@ import org.bukkit.configuration.file.FileConfiguration;
  * Configuration storage defining global configurations for VoxelSniper.
  */
 public class VoxelSniperConfiguration {
-    public static final String CONFIG_IDENTIFIER_LITESNIPER_MAX_BRUSH_SIZE = "litesniper-max-brush-size";
+    public static final String CONFIG_IDENTIFIER_MAX_BRUSH_SIZE = "max-brush-size";
     public static final String CONFIG_IDENTIFIER_MESSAGE_ON_LOGIN_ENABLED = "message-on-login-enabled";
-    public static final int DEFAULT_LITESNIPER_MAX_BRUSH_SIZE = 30;
+    public static final int DEFAULT_MAX_BRUSH_SIZE = 30;
     public static final boolean DEFAULT_MESSAGE_ON_LOGIN_ENABLED = true;
     private FileConfiguration configuration;
 
@@ -20,12 +20,12 @@ public class VoxelSniperConfiguration {
     }
 
     /**
-     * Returns maximum size of brushes that LiteSnipers can use.
+     * Returns maximum size of brushes that FastAsyncVoxelSniper can use.
      *
-     * @return maximum size
+     * @return maximum brush size
      */
-    public int getLiteSniperMaxBrushSize() {
-        return configuration.getInt(CONFIG_IDENTIFIER_LITESNIPER_MAX_BRUSH_SIZE, DEFAULT_LITESNIPER_MAX_BRUSH_SIZE);
+    public int getVoxelSniperMaxBrushSize() {
+        return configuration.getInt(CONFIG_IDENTIFIER_MAX_BRUSH_SIZE, DEFAULT_MAX_BRUSH_SIZE);
     }
 
     /**
